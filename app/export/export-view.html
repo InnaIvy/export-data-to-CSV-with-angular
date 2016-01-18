@@ -1,0 +1,45 @@
+<!--EXPORT TO CSV START-->
+  <div ng-controller="exportController as exportCtrl">
+      <!-- Split button -->
+      <div class="btn-group export-dropdown-btn" uib-dropdown>
+          <button id="split-button" type="button" class="btn btn-primary" ng-disabled="exportCtrl.disabled"
+                  ng-csv="exportCtrl.limit ? exportCtrl.CSV.getDataArray : ''" lazy-load="true"
+                  filename="{{ filename }}"
+                  field-separator="{{separator}}" csv-header="exportCtrl.CSV.getHeads"
+                  decimal-separator="{{decimalSeparator}}"
+          >Export to CSV ({{exportCtrl.limit}})
+          </button>
+          <button type="button" class="btn btn-primary" uib-dropdown-toggle>
+              <span class="caret"></span>
+              <span class="sr-only"></span>
+          </button>
+          <ul uib-dropdown-menu role="menu" aria-labelledby="split-button" class="export-dropdown-list">
+
+              <li role="menuitem">
+                  <label>
+                      <input type="radio" ng-model="exportCtrl.limit"
+                             ng-click="exportCtrl.updateLimit(exportCtrl.limit)" value="25">
+                      Export 25
+                  </label>
+              </li>
+              <li class="divider"></li>
+              <li role="menuitem">
+                  <label>
+                      <input type="radio" ng-model="exportCtrl.limit"
+                             ng-click="exportCtrl.updateLimit(exportCtrl.limit)" value="50">
+                      Export 50
+                  </label>
+              </li>
+              <li class="divider"></li>
+              <li role="menuitem">
+                  <label>
+                      <input type="radio" ng-model="exportCtrl.limit"
+                             ng-click="exportCtrl.updateLimit(exportCtrl.limit)" value="all">
+                      Export all
+                  </label>
+              </li>
+          </ul>
+      </div>
+  </div>
+
+  <!--EXPORT TO CSV END-->

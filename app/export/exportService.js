@@ -8,6 +8,13 @@
             var exportService = {
                 'getCsvData': getCsvData
             };
+            
+             /**
+             * Dev: Inna Plyushch
+             * mail: ipl@ciklum.com
+             * @param limit
+             * @returns {*}
+             */
 
             function getCsvData(limit) {
                 return $http.post( '',{

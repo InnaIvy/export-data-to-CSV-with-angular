@@ -18,7 +18,6 @@
 
                         var tokenData = jwtHelper.decodeToken(response.data.tokenData);
                         if(angular.isObject(tokenData)){
-                            console.log(tokenData);
                             return tokenData;
                         } else {
                             return $q.reject(tokenData);
